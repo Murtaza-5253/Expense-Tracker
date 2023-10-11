@@ -36,10 +36,14 @@ function App() {
     },
   ];
 
+  const addExpense = (expenseData) => {
+    console.log(expenseData)
+  }
+
   return (
     <div>
       <h2><center>Lets Get Started</center></h2>
-      <NewExpense/>
+      <NewExpense onAddExpense={addExpense}/>
       <Expenses expenses={expenses} />
       
     </div>

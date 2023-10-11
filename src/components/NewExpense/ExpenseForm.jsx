@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   //Multiple States
     // const [enteredTitle, setEnteredTitle] = useState("");
     // const [enteredAmount, setEnteredAmount] = useState("");
@@ -45,7 +45,7 @@ const ExpenseForm = () => {
   const [userInput, setUserInput] = useState({
     title: "",
     amount: "",
-    date: new Date(),
+    date: "",
   });
 
   //Single Function for change handler
@@ -66,12 +66,13 @@ const ExpenseForm = () => {
   };
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(userInput)
+    // console.log(userInput)
     setUserInput({
         title: "",
         amount: "",
         date: new Date(),
     })
+    props.onAddExpense(userInput)
     // const data = {
     //     title:enteredTitle,
     //     amout:enteredAmount,
