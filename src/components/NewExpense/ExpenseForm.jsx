@@ -45,7 +45,7 @@ const ExpenseForm = (props) => {
   const [userInput, setUserInput] = useState({
     title: "",
     amount: "",
-    date: "",
+    date: new Date(),
   });
 
   //Single Function for change handler
